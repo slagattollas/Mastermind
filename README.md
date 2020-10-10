@@ -39,5 +39,38 @@
         <h3 style="border-bottom: 1px solid lightgrey">Actividad (Instrucciones)</h3>
         <img src="assets/img/MastermindActivity.png">
     </div>
+    <div class="versiones">
+        <h1 id="versiones">Versión</h1>
+        <table class="tableblock frame-all grid-all stretch">
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 80%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tableblock halign-left valign-top">Versión</th>
+                    <th class="tableblock halign-left valign-top">Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tableblock halign-left valign-top">
+                        <div class="content">
+                            <div class="paragraph">
+                                <p><span class="red">Mastermind. Versión 1.<strong>Básica</strong></span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tableblock halign-left valign-top">
+                        <div class="content">
+                            <div class="paragraph">
+                                <p><span class="red">Juego de Mastermind, modelo del dominio</span></p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
