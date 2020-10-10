@@ -41,7 +41,7 @@
     </div>
     <div class="versiones">
         <h1 id="versiones">Versión</h1>
-        <table class="tableblock frame-all grid-all stretch">
+        <table style="width: 100%" class="tableblock frame-all grid-all stretch">
             <colgroup>
                 <col style="width: 20%;">
                 <col style="width: 80%;">
