@@ -15,5 +15,29 @@
     <span id="email" class="email"><a href="mailto:stefanolagattolla.s@gmail.com">stefanolagattolla.s@gmail.com</a></span><br>
     <span id="revnumber">version 0.0.1</span>
    </div>
+   <div id="indice">
+        <ul>
+            <li><a href="#dominio">Modelo del Dominio</a></li>
+            <li><a href="#e_inicial">Estado Inicial</a></li>
+            <li><a href="#e_final">Estado Final</a></li>
+            <li><a href="#actividad">Actividad</a></li>
+        </ul>
+   </div>
+    <div id="dominio">
+        <h1>Modelo del Dominio</h1>
+        <img src="assets/img/MastermindClasses2.png">
+    </div>
+    <div id="e_inicial">
+        <h1>Estado Inicial</h1>
+        <img src="assets/img/MastermindInicial.png">
+    </div>
+    <div id="e_final">
+        <h1>Estado Final</h1>
+        <img src="assets/img/MastermindFinal.png">
+    </div>
+    <div id="actividad">
+        <h1>Actividad (Instrucciones)</h1>
+        <img src="assets/img/MastermindActivity.png">
+    </div>
 </body>
 </html>
