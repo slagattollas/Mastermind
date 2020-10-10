@@ -24,19 +24,19 @@
         </ul>
    </div>
     <div id="dominio">
-        <h1>Modelo del Dominio</h1>
+        <h3>Modelo del Dominio</h1>
         <img src="assets/img/MastermindClasses2.png">
     </div>
     <div id="e_inicial">
-        <h1>Estado Inicial</h1>
+        <h3>Estado Inicial</h1>
         <img src="assets/img/MastermindInicial.png">
     </div>
     <div id="e_final">
-        <h1>Estado Final</h1>
+        <h3>Estado Final</h1>
         <img src="assets/img/MastermindFinal.png">
     </div>
     <div id="actividad">
-        <h1>Actividad (Instrucciones)</h1>
+        <h3>Actividad (Instrucciones)</h1>
         <img src="assets/img/MastermindActivity.png">
     </div>
 </body>
