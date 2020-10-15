@@ -18,16 +18,21 @@
    <div id="indice">
         <ul>
             <li><a href="#arquitectura">Arquitectura</a></li>
-            <li><a href="#modelo_dominio">Modelo del dominio</a></li>
+            <li><a href="#paquete_mastermind">Package: Mastermind</a></li>
+            <li><a href="#paquete_view_model">Package: mastermind.models & mastermind.views</a></li>
         </ul>
    </div>
     <div id="arquitectura">
         <h3 style="border-bottom: 1px solid lightgrey">Modelo del Dominio</h3>
-        <img src="assets/img/arquitectura.png">
+        <img src="assets/img/arquitecturaDocumentView.png">
     </div>
-    <div id="modelo_dominio">
-        <h3 style="border-bottom: 1px solid lightgrey">Estado Inicial</h3>
-        <img src="assets/img/domainModel.png">
+    <div id="paquete_mastermind">
+        <h3 style="border-bottom: 1px solid lightgrey">Package: Mastermind</h3>
+        <img src="assets/img/paqueteMastermind.png">
+    </div>
+    <div id="paquete_view_model">
+        <h3 style="border-bottom: 1px solid lightgrey">Package: mastermind.models & mastermind.views</h3>
+        <img src="assets/img/documentView.png">
     </div>
 </body>
 </html>
