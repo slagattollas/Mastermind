@@ -1,31 +1,24 @@
 package com.mastermindstefano.main;
 
-import com.mastermindstefano.utils.Print;
+import com.mastermindstefano.main.models.Board;
+import com.mastermindstefano.main.views.GameIniView;
+import com.mastermindstefano.main.views.ResumeView;
 
 public class Mastermind {
     private Board board;
-
+    private GameIniView gameIniView;
+    private ResumeView resumeView;
+    public Mastermind(){
+        this.board = new Board();
+        this.gameIniView = new GameIniView(this.board);
+        this.resumeView = new ResumeView();
+    }
     public void play(){
         do {
-            this.gameIni();
-        }while (this.isGameResumed());
-
+            this.gameIniView.interact();
+        }while(this.resumeView.isGameResumed());
     }
-    private void gameIni(){
-        Message.GAME_TITLE.writeln();
-        this.board = new Board();
-        this.board.writeln();
-        do {
-            GuessRow guessRow = new GuessRow();
-            guessRow.read();
-            this.board.add(guessRow);
-            this.board.writeln();
-        }while(!this.board.isFinished());
-    }
-    private boolean isGameResumed(){
-        return Print.instance().readResume(Message.RETRY.toString());
-    }
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         new Mastermind().play();
     }
 }

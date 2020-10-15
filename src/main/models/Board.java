@@ -1,8 +1,4 @@
-package com.mastermindstefano.main;
-
-import com.mastermindstefano.utils.Print;
-
-import java.util.Arrays;
+package com.mastermindstefano.main.models;
 
 public class Board {
     private static final int ATTEMPTS = 10;
@@ -10,19 +6,27 @@ public class Board {
     private GuessRow[] guessRow;
     private Goal[] goal;
     private int attempt = 0;
-    Board() {
+    public Board() {
         this.hiddenRow = new HiddenRow();
         this.guessRow = new GuessRow[Board.ATTEMPTS];
         this.goal = new Goal[Board.ATTEMPTS];
         this.attempt = 0;
     }
-    public void writeln(){
-        Print.instance().writeln();
-        Message.NUMBER_ATTEMPTS.writeln(this.attempt);
-        for (int i = 0; i < this.attempt; i++){
-            this.guessRow[i].print();
-            this.goal[i].writeln();
-        }
+    public int getAttempts(){
+        return this.attempt;
+    }
+    public String getGuessRow(int index){
+        GuessRow row = this.guessRow[index];
+        return row.toString();
+    }
+    public String getGoal(int index){
+        Goal row = this.goal[index];
+        return row.toString();
+    }
+    public void addGuessRow(GuessRow guessRow){
+        this.guessRow[this.attempt] = guessRow;
+        this.goal[this.attempt] = this.hiddenRow.getGoal(guessRow);
+        this.attempt++;
     }
     public boolean isFinished(){
         return this.isWinner() || this.isLooser();
@@ -32,10 +36,5 @@ public class Board {
     }
     public boolean isLooser(){
         return this.attempt == Board.ATTEMPTS;
-    }
-    public void add(GuessRow guessRow){
-        this.guessRow[this.attempt] = guessRow;
-        this.goal[this.attempt] = this.hiddenRow.getGoal(guessRow);
-        this.attempt++;
     }
 }

@@ -1,4 +1,4 @@
-package com.mastermindstefano.main;
+package com.mastermindstefano.main.views;
 
 import com.mastermindstefano.utils.Print;
 

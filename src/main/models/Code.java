@@ -1,12 +1,13 @@
-package com.mastermindstefano.main;
+package com.mastermindstefano.main.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class Code {
+public class Code {
     protected List<Pieces> pieces;
 
     protected Code (){
         this.pieces = new ArrayList<Pieces>();
     }
+
 }

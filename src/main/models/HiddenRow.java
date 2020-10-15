@@ -1,10 +1,9 @@
-package com.mastermindstefano.main;
+package com.mastermindstefano.main.models;
 
 import java.util.Collections;
 import java.util.Random;
 
-class HiddenRow extends Code {
-
+public class HiddenRow extends Code{
     HiddenRow(){
         super();
         for(int i=0; i<Pieces.length(); i++) {
