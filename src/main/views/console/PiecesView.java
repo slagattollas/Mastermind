@@ -13,4 +13,12 @@ public class PiecesView {
         }
         return result;
     }
+    public static Pieces getInstance(char character) {
+        for (int i = 0; i < PiecesView.INITIALS.length; i++) {
+            if (PiecesView.INITIALS[i] == character) {
+                return Pieces.values()[i];
+            }
+        }
+        return null;
+    }
 }

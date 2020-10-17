@@ -1,17 +1,16 @@
 package com.mastermindstefano.main.views.console;
 
-import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.views.Message;
+import com.mastermindstefano.main.controllers.PlayController;
+import com.mastermindstefano.main.controllers.ResumeController;
 
 public class View extends com.mastermindstefano.main.views.View {
     private GameIniView gameIniView;
     private StartGameView startGameView;
     private ResumeView resumeView;
-    public View(Board board){
-        super(board);
-        this.gameIniView = new GameIniView(board);
-        this.startGameView = new StartGameView(board);
-        this.resumeView = new ResumeView(board);
+    public View(PlayController playController, ResumeController resumeController){
+        this.gameIniView = new GameIniView(playController);
+        this.startGameView = new StartGameView();
+        this.resumeView = new ResumeView(resumeController);
     }
 
     @Override

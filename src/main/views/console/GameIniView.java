@@ -1,22 +1,23 @@
 package com.mastermindstefano.main.views.console;
 
-import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.views.Message;
 
-public class GameIniView extends SubView {
+import com.mastermindstefano.main.controllers.PlayController;
+
+public class GameIniView{
     private BoardView boardView;
     private GuessRowView guessRowView;
-    public GameIniView(Board board){
-        super(board);
-        this.boardView = new BoardView(this.board);
-        this.guessRowView = new GuessRowView(this.board);
+    private PlayController playController;
+    public GameIniView(PlayController playController){
+        this.playController = playController;
+        this.boardView = new BoardView(playController);
+        this.guessRowView = new GuessRowView(playController);
     }
     public void interact(){
         this.boardView.interact();
         do {
             this.guessRowView.read();
             this.boardView.interact();
-        }while(!this.board.isFinished());
+        }while(!this.playController.isFinished());
     }
 
 }
