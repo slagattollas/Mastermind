@@ -14,7 +14,7 @@ public enum Error {
     private Error(String error){
         this.errMessage = error;
     }
-    void writeln(){
+    public void writeln(){
         Print.instance().writeln(this.errMessage);
     }
     public boolean isNull(){
