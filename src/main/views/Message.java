@@ -2,7 +2,7 @@ package com.mastermindstefano.main.views;
 
 import com.mastermindstefano.utils.Print;
 
-enum Message {
+public enum Message {
     GAME_TITLE("WELCOME TO MASTERMIND"),
     NUMBER_ATTEMPTS("#attempts attempt(s): "),
     RESULT(" --> #blacks blacks and #whites whites"),
@@ -15,15 +15,15 @@ enum Message {
         this.message = message;
     }
 
-    void writeln(){
+    public void writeln(){
         Print.instance().writeln(this.message);
     }
-    void writeln(int attempts) {
+    public void writeln(int attempts) {
         assert this == Message.NUMBER_ATTEMPTS;
         Print.instance().writeln(this.message.replaceAll("#attempts", "" + attempts));
         Print.instance().writeln(attempts);
     }
-    void writeln(int blacks, int whites){
+    public void writeln(int blacks, int whites){
         assert this == Message.RESULT;
         Print.instance().writeln(this.message.replaceFirst("#blacks", "" + blacks).replaceFirst("#whites", "" + whites));
     }

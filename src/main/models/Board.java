@@ -12,6 +12,12 @@ public class Board {
         this.goal = new Goal[Board.ATTEMPTS];
         this.attempt = 0;
     }
+    public void clear() {
+        this.hiddenRow = new HiddenRow();
+        this.guessRow = new GuessRow[Board.ATTEMPTS];
+        this.goal = new Goal[Board.ATTEMPTS];
+        this.attempt = 0;
+    }
     public int getAttempts(){
         return this.attempt;
     }
