@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-   <h1>Mastermind. DomainModel</h1>
+   <h1>Mastermind. DOO.MVP.WithoutDoubleDispatching</h1>
    <div class="info">
     <span id="author" class="author">Stefano Lagattolla</span><br>
     <span id="email" class="email"><a href="mailto:stefanolagattolla.s@gmail.com">stefanolagattolla.s@gmail.com</a></span><br>
