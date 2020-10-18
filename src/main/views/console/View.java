@@ -2,7 +2,7 @@ package com.mastermindstefano.main.views.console;
 
 import com.mastermindstefano.main.controllers.*;
 
-public class View extends com.mastermindstefano.main.views.View {
+public class View extends com.mastermindstefano.main.views.View implements ControllerVisitor {
     private GameIniView gameIniView;
     private StartGameView startGameView;
     private ResumeView resumeView;
@@ -14,14 +14,19 @@ public class View extends com.mastermindstefano.main.views.View {
 
     @Override
     public void interact(Controller controller){
-        if(controller instanceof StartController){
-            this.startGameView.interact((StartController) controller);
-        }else{
-            if(controller instanceof PlayController){
-                this.gameIniView.interact((PlayController) controller);
-            }else{
-                this.resumeView.interact((ResumeController) controller);
-            }
-        }
+        controller.accept(this);
+    }
+    @Override
+    public void visit(StartController startController) {
+        this.startGameView.interact(startController);
+    }
+
+    @Override
+    public void visit(PlayController playController) {
+        this.gameIniView.interact(playController);	}
+
+    @Override
+    public void visit(ResumeController resumeController) {
+        this.resumeView.interact(resumeController);
     }
 }
