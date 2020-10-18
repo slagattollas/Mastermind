@@ -1,33 +1,28 @@
 package com.mastermindstefano.main.controllers;
 
 import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.models.GuessRow;
+import com.mastermindstefano.main.models.State;
+import com.mastermindstefano.main.models.StateValue;
+
+import javax.naming.ldap.Control;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Logic {
     private Board board;
-    private PlayController playController;
-    private ResumeController resumeController;
+    private State state;
+    private Map<StateValue, Control> controllers;
+
     public Logic() {
+        this.state = new State();
         this.board = new Board();
-        this.playController = new PlayController(this.board);
-        this.resumeController = new ResumeController(this.board);
+        this.controllers = new HashMap<StateValue, Control>();
+        this.controllers.put(StateValue.INITIAL, (Control) new StartController(this.board, this.state));
+        this.controllers.put(StateValue.IN_GAME, (Control) new PlayController(this.board, this.state));
+        this.controllers.put(StateValue.RESUME, (Control) new ResumeController(this.board, this.state));
+        this.controllers.put(StateValue.EXIT, null);
     }
-    public void clear(){
-        this.resumeController.clear();
-    }
-    public boolean isFinished(){
-        return this.playController.isFinished();
-    }
-    public int getAttempts(){
-        return this.playController.getAttempts();
-    }
-    public String getGuessRow(int index) {
-        return this.playController.getGuessRow(index);
-    }
-    public String getGoal(int index){
-        return this.playController.getGoal(index);
-    }
-    public void addGuessRow(GuessRow guessRow){
-        this.board.addGuessRow(guessRow);
+    public Controller getController(){
+        return (Controller) this.controllers.get(this.state.getValueState());
     }
 }
