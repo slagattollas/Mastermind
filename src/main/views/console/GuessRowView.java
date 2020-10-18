@@ -1,6 +1,6 @@
 package com.mastermindstefano.main.views.console;
 
-import com.mastermindstefano.main.controllers.PlayController;
+import com.mastermindstefano.main.controllers.Logic;
 
 import com.mastermindstefano.main.models.GuessRow;
 import com.mastermindstefano.main.models.Pieces;
@@ -10,9 +10,9 @@ import com.mastermindstefano.utils.Print;
 
 
 public class GuessRowView{
-    private PlayController playController;
-    public GuessRowView(PlayController playController){
-        this.playController = playController;
+    private Logic logic;
+    public GuessRowView(Logic logic){
+        this.logic = logic;
     }
     void read(){
         Error error;
@@ -40,6 +40,6 @@ public class GuessRowView{
             }
             error = Error.NULL_ERROR;
         }while(!error.isNull());
-        this.playController.addGuessRow(guessRow);
+        this.logic.addGuessRow(guessRow);
     }
 }
