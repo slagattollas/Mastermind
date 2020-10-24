@@ -13,7 +13,7 @@
    <div class="info">
     <span id="author" class="author">Stefano Lagattolla</span><br>
     <span id="email" class="email"><a href="mailto:stefanolagattolla.s@gmail.com">stefanolagattolla.s@gmail.com</a></span><br>
-    <span id="revnumber">version 0.3.1</span>
+    <span id="revnumber">version 0.8.1</span>
    </div>
    <div id="indice">
         <ul>
