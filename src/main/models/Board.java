@@ -12,6 +12,12 @@ public class Board {
         this.goal = new Goal[Board.ATTEMPTS];
         this.attempt = 0;
     }
+    public void clear() {
+        this.hiddenRow = new HiddenRow();
+        this.guessRow = new GuessRow[Board.ATTEMPTS];
+        this.goal = new Goal[Board.ATTEMPTS];
+        this.attempt = 0;
+    }
     public int getAttempts(){
         return this.attempt;
     }
@@ -28,6 +34,12 @@ public class Board {
         this.goal[this.attempt] = this.hiddenRow.getGoal(guessRow);
         this.attempt++;
     }
+    public GuessRow[] getGuessRowArray(){
+        return this.guessRow;
+    }
+    public Goal[] getGoalArray(){
+        return this.goal;
+    }
     public boolean isFinished(){
         return this.isWinner() || this.isLooser();
     }
@@ -36,5 +48,11 @@ public class Board {
     }
     public boolean isLooser(){
         return this.attempt == Board.ATTEMPTS;
+    }
+    public void set(Board board){
+        Goal[] goal = board.getGoalArray();
+        GuessRow[] guessRows = board.getGuessRowArray();
+        this.guessRow = guessRows;
+        this.goal = goal;
     }
 }

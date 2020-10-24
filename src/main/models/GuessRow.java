@@ -3,6 +3,7 @@ package com.mastermindstefano.main.models;
 import java.util.List;
 
 public class GuessRow extends Code {
+    public static final int WIDTH = 4;
     public GuessRow(){
         super();
     }

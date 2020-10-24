@@ -54,4 +54,18 @@ public class Print {
     public void writeln(){
         System.out.println();
     }
+    public int readInt(String title) {
+        int input = 0;
+        boolean ok = false;
+        do {
+            try {
+                input = Integer.parseInt(this.readString(title));
+                ok = true;
+            } catch (Exception ex) {
+                System.out.println("Must be integer");
+            }
+            assert ok;
+        } while (!ok);
+        return input;
+    }
 }
