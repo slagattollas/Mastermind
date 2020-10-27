@@ -4,10 +4,10 @@ public class GameMemento {
     private Board board;
 
     GameMemento(Board board){
-        this.board = board;
+        this.board = board.copy();
     }
 
     public Board getBoard() {
-        return board;
+        return this.board;
     }
 }
