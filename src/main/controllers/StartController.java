@@ -12,7 +12,6 @@ public class StartController extends Controller implements AcceptorController {
         controllerVisitor.visit(this);
     }
     public void next(){
-        this.session.reset();
         this.session.next();
     }
 
