@@ -12,6 +12,7 @@ public abstract class Menu {
     }
 
     public void execute() {
+        Print.instance().writeln(this.commandList.size());
         ArrayList<Command> commands = new ArrayList<Command>();
         for (int i = 0; i < this.commandList.size(); i++) {
             if (this.commandList.get(i).isActive()) {
@@ -25,8 +26,10 @@ public abstract class Menu {
             error = false;
             print.writeln();
             print.writeln(Menu.OPTION);
+            print.writeln();
             for (int i = 0; i < commands.size(); i++) {
                 print.writeln((i + 1) + ") " + commands.get(i).getTitle());
+                print.writeln();
             }
             option = print.readInt("") - 1;
             if (!new ClosedInterval(0, commands.size() - 1).isIncluded(option)) {

@@ -1,7 +1,6 @@
 package com.mastermindstefano.main;
 
 import com.mastermindstefano.main.controllers.AcceptorController;
-import com.mastermindstefano.main.controllers.Controller;
 import com.mastermindstefano.main.controllers.Logic;
 import com.mastermindstefano.main.views.View;
 
@@ -9,10 +8,10 @@ public abstract class Mastermind {
     private View view;
     private Logic logic;
     protected Mastermind(){
-        this.logic = new Logic();
-        this.view = this.createView();
+        this.logic = this.createLogic();
+        this.view = new View();
     }
-    protected abstract View createView();
+    protected abstract Logic createLogic();
     protected void play(){
         AcceptorController controller;
         do {

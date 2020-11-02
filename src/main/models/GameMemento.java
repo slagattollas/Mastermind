@@ -1,13 +1,13 @@
 package com.mastermindstefano.main.models;
 
 public class GameMemento {
-    private Board board;
+    private Game game;
 
-    GameMemento(Board board){
-        this.board = board.copy();
+    GameMemento(Game game){
+        this.game = game.copy();
     }
 
-    public Board getBoard() {
-        return this.board;
+    public Game getBoard() {
+        return this.game;
     }
 }

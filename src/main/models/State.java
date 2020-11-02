@@ -1,5 +1,6 @@
 package com.mastermindstefano.main.models;
 
+
 public class State {
     private StateValue stateValue;
     public State(){

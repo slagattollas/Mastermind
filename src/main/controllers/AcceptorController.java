@@ -1,7 +1,12 @@
 package com.mastermindstefano.main.controllers;
 
-public interface AcceptorController {
+import com.mastermindstefano.main.models.Session;
 
-    void accept(ControllerVisitor controllerVisitor);
+public abstract class AcceptorController extends Controller {
+
+    AcceptorController(Session session){
+        super(session);
+    }
+    public abstract void accept(ControllerVisitor controllerVisitor);
 
 }

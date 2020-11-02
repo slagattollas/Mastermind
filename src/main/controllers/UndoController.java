@@ -1,15 +1,18 @@
 package com.mastermindstefano.main.controllers;
 
 import com.mastermindstefano.main.models.Session;
+import com.mastermindstefano.main.models.SessionImplementation;
 
 public class UndoController extends Controller{
-    UndoController(Session session) {
+    private SessionImplementation sessionImplementation;
+    public UndoController(Session session) {
         super(session);
+        this.sessionImplementation = (SessionImplementation) this.session;
     }
-    void undo(){
-        this.session.undo();
+    public void undo(){
+        this.sessionImplementation.undo();
     }
-    boolean undoable(){
-        return this.session.undoable();
+    public boolean undoable(){
+        return this.sessionImplementation.undoable();
     }
 }

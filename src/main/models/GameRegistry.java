@@ -1,15 +1,17 @@
 package com.mastermindstefano.main.models;
 
+import com.mastermindstefano.utils.Print;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameRegistry {
     private List<GameMemento> mementoList;
-    private Board board;
+    private Game game;
     private int indexMemento = -1;
     private int undoed = 0;
-    GameRegistry(Board board){
-        this.board = board;
+    GameRegistry(Game game){
+        this.game = game;
         this.reset();
     }
     void reset() {
@@ -18,13 +20,16 @@ public class GameRegistry {
         this.undoed = 0;
     }
     void registry() {
+        if(this.mementoList.size() > 0){
+            this.mementoList.remove(indexMemento);
+        }
+        Print.instance().writeln(this.indexMemento);
+        this.mementoList.add(this.indexMemento, new GameMemento(this.game));
         this.indexMemento++;
-        this.mementoList.remove(indexMemento);
-        this.mementoList.add(this.indexMemento, new GameMemento(this.board));
     }
     void undo(){
         this.indexMemento--;
-        this.board.set(this.mementoList.get(indexMemento).getBoard());
+        this.game.set(this.mementoList.get(indexMemento).getBoard());
         this.undoed = 1;
     }
     boolean undoable() {
@@ -32,7 +37,7 @@ public class GameRegistry {
     }
     void redo(){
         this.indexMemento++;
-        this.board.set(this.mementoList.get(indexMemento).getBoard());
+        this.game.set(this.mementoList.get(indexMemento).getBoard());
         if(this.mementoList.size() == this.indexMemento){
             this.undoed = 0;
         }
