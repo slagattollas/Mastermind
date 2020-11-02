@@ -1,20 +1,13 @@
 package com.mastermindstefano.main.controllers;
 
-import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.models.State;
+import com.mastermindstefano.main.models.Session;
 
 public abstract class Controller {
-    protected Board board;
-    protected State state;
+    protected Session session;
 
-    Controller(Board board, State state){
-        this.board = board;
-        this.state = state;
+    Controller(Session session){
+        this.session = session;
     }
-
-    public void next(){
-        this.state.next();
-    }
-    public abstract void accept(ControllerVisitor controllerVisitor);
+    public abstract void control();
 
 }

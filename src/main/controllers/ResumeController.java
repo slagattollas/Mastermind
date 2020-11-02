@@ -1,20 +1,24 @@
 package com.mastermindstefano.main.controllers;
 
-import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.models.State;
+import com.mastermindstefano.main.models.Session;
+import com.mastermindstefano.main.views.ResumeView;
 
 public class ResumeController extends Controller {
-    public ResumeController(Board board, State state) {
-        super(board,state);
+    public ResumeController(Session session) {
+        super(session);
     }
 
     @Override
-    public void accept(ControllerVisitor controllerVisitor) {
-        controllerVisitor.visit(this);
+    public void control() {
+        this.resume(new ResumeView().read());
     }
 
-    public void clear(){
-        this.state.reset();
-        this.board.clear();
+    private void resume(boolean isResumed){
+        if(isResumed){
+            this.session.newGame();
+        }else{
+            this.session.next();
+        }
     }
+
 }

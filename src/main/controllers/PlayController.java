@@ -1,33 +1,30 @@
 package com.mastermindstefano.main.controllers;
-
-import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.models.GuessRow;
-import com.mastermindstefano.main.models.State;
+import com.mastermindstefano.main.models.Session;
+import com.mastermindstefano.main.views.ResultView;
 
 public class PlayController extends Controller {
-    public PlayController(Board board, State state) {
-        super(board, state);
+    private GameController gameController;
+    private GuessRowController guessRowController;
+    public PlayController(Session session) {
+        super(session);
+        this.gameController = new GameController(session);
+        this.guessRowController = new GuessRowController(session);
     }
 
     @Override
-    public void accept(ControllerVisitor controllerVisitor) {
-        controllerVisitor.visit(this);
+    public void control() {
+        this.session.next();
+        this.gameController.control();
+        do {
+            this.guessRowController.control();
+            this.gameController.control();
+        }while(!this.session.isFinished());
+        if(this.session.isFinished()){
+            if(this.session.isWinner()){
+                new ResultView().printWinner();
+            }else{
+                new ResultView().printLooser();
+            }
+        }
     }
-
-    public boolean isFinished(){
-        return this.board.isFinished();
-    }
-    public int getAttempts(){
-        return this.board.getAttempts();
-    }
-    public String getGuessRow(int index){
-        return this.board.getGuessRow(index);
-    }
-    public String getGoal(int index){
-        return this.board.getGoal(index);
-    }
-    public void addGuessRow(GuessRow guessRow){
-        this.board.addGuessRow(guessRow);
-    }
-
 }

@@ -9,6 +9,9 @@ public class Goal {
         this.whites = whites;
         this.blacks = blacks;
     }
+    public String getGoalString(){
+        return "Whites: "+this.whites+"  Blacks: "+this.blacks;
+    }
     public boolean guessed(){
         return this.blacks == Goal.WIDTH;
     }

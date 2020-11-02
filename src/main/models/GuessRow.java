@@ -1,5 +1,7 @@
 package com.mastermindstefano.main.models;
 
+import com.mastermindstefano.utils.Print;
+
 import java.util.List;
 
 public class GuessRow extends Code {
@@ -20,6 +22,13 @@ public class GuessRow extends Code {
             }
         }
         return false;
+    }
+    public String getRowString(){
+        String str = "";
+        for (int i = 0; i < this.pieces.size(); i++) {
+            str += this.pieces.get(i).toString()+"  ";
+        }
+        return str;
     }
     public void addPiece(Pieces piece){
         this.pieces.add(piece);

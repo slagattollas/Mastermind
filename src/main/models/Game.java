@@ -1,21 +1,21 @@
 package com.mastermindstefano.main.models;
 
-public class Board {
+public class Game {
     private static final int ATTEMPTS = 10;
     private HiddenRow hiddenRow;
     private GuessRow[] guessRow;
     private Goal[] goal;
     private int attempt = 0;
-    public Board() {
+    public Game() {
         this.hiddenRow = new HiddenRow();
-        this.guessRow = new GuessRow[Board.ATTEMPTS];
-        this.goal = new Goal[Board.ATTEMPTS];
+        this.guessRow = new GuessRow[Game.ATTEMPTS];
+        this.goal = new Goal[Game.ATTEMPTS];
         this.attempt = 0;
     }
     public void clear() {
         this.hiddenRow = new HiddenRow();
-        this.guessRow = new GuessRow[Board.ATTEMPTS];
-        this.goal = new Goal[Board.ATTEMPTS];
+        this.guessRow = new GuessRow[Game.ATTEMPTS];
+        this.goal = new Goal[Game.ATTEMPTS];
         this.attempt = 0;
     }
     public int getAttempts(){
@@ -23,11 +23,11 @@ public class Board {
     }
     public String getGuessRow(int index){
         GuessRow row = this.guessRow[index];
-        return row.toString();
+        return row.getRowString();
     }
     public String getGoal(int index){
         Goal row = this.goal[index];
-        return row.toString();
+        return row.getGoalString();
     }
     public void addGuessRow(GuessRow guessRow){
         this.guessRow[this.attempt] = guessRow;
@@ -41,6 +41,6 @@ public class Board {
         return this.goal[this.attempt - 1].guessed();
     }
     public boolean isLooser(){
-        return this.attempt == Board.ATTEMPTS;
+        return this.attempt == Game.ATTEMPTS;
     }
 }

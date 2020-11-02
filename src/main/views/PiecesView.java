@@ -1,4 +1,4 @@
-package com.mastermindstefano.main.views.console;
+package com.mastermindstefano.main.views;
 
 import com.mastermindstefano.main.models.Pieces;
 

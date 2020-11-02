@@ -1,16 +1,16 @@
 package com.mastermindstefano.main.controllers;
 
-import com.mastermindstefano.main.models.Board;
-import com.mastermindstefano.main.models.State;
+import com.mastermindstefano.main.models.Session;
+import com.mastermindstefano.main.views.StartGameView;
 
 public class StartController extends Controller {
-    public StartController(Board board, State state) {
-        super(board, state);
+    public StartController(Session session) {
+        super(session);
     }
-
     @Override
-    public void accept(ControllerVisitor controllerVisitor) {
-        controllerVisitor.visit(this);
+    public void control() {
+        this.session.next();
+        new StartGameView().writeln();
     }
 
 }

@@ -25,5 +25,13 @@ public enum Pieces {
         public boolean isNull(){
             return this == Pieces.NULL_PIECES;
         }
+        public static Pieces getInstance(char character) {
+                for (int i = 0; i < Pieces.length(); i++) {
+                        if(Pieces.get(i).initial == character) {
+                                return Pieces.get(i);
+                        }
+                }
+                return Pieces.NULL_PIECES;
+        }
 
 }
