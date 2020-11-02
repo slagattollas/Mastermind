@@ -14,8 +14,8 @@
     <span id="author" class="author">Stefano Lagattolla</span><br>
     <span id="email" class="email"><a href="mailto:stefanolagattolla.s@gmail.com">stefanolagattolla.s@gmail.com</a></span><br>
    </div>
-   <span>Autoevaluación: 9.5pts</span>
-   <span>Evalucación Profesor: 10pts</span>
-   <span>Horas trabajadas: 12h</span>
+   <span>Autoevaluación: 9.5pts</span><br>
+   <span>Evalucación Profesor: 10pts</span><br>
+   <span>Horas trabajadas: 12h</span><br>
 </body>
 </html>
